@@ -1,0 +1,133 @@
+@import url(https://fonts.googleapis.com/css?family=League+Spartan:100,200,300,regular,500,600,700,800,900);
+
+* {
+	font-family: League Spartan;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: #3a4663;
+	padding: 15px;
+	height: 90vh;
+}
+
+.page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+.calculator {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.th1 {
+	color: white;
+}
+
+.screen {
+	background-color: #181f33;
+	padding: 20px;
+	border-radius: 15px;
+	width: 260px;
+	font-size: 2rem;
+	color: white;
+	font-weight: bolder;
+	display: flex;
+	flex-direction: row-reverse;
+	margin-bottom: 30px;
+}
+
+.button {
+	background-color: #242d44;
+	width: 260px;
+	padding: 15px;
+	border-radius: 15px;
+}
+
+.button > div {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.button > div > button {
+	background-color: #eae3dc;
+	box-shadow: 0px -4px 0px 0px #b3a497 inset;
+	border: 0;
+	margin: 5px;
+	height: 50px;
+	width: 50px;
+	border-radius: 5px;
+	color: #434a59;
+	font-weight: bolder;
+	font-size: 2rem;
+}
+
+.button > .part5 {
+	grid-template-columns: 1fr 1fr;
+}
+
+#reset {
+	background-color: #647198;
+	box-shadow: 0px -4px 0px 0px #414e73 inset;
+	color: white;
+	width: 85%;
+	font-size: 1rem;
+}
+
+#calc {
+	background-color: #d03f2f;
+	box-shadow: 0px -4px 0px 0px #93261a inset;
+	color: white;
+	width: 85%;
+	font-size: 1rem;
+}
+
+#del {
+	background-color: #647198;
+	box-shadow: 0px -4px 0px 0px #414e73 inset;
+	color: white;
+	font-size: 1rem;
+}
+
+@media screen and (min-width: 720px) {
+	.button > div > button {
+		margin: 5px;
+		height: 50px;
+		width: 80px;
+		font-size: 2rem;
+	}
+	.screen {
+		width: 380px;
+	}
+	.button {
+		width: 380px;
+	}
+	#reset,
+	#calc {
+		width: 90%;
+	}
+	#reset,
+	#calc,
+	#del {
+		font-size: 1.5rem;
+	}
+	.button > div > button:hover {
+		background: #fffffe;
+	}
+	.button > div > #reset:hover,
+	#del:hover {
+		background: #a2b2e1;
+	}
+
+	.button > div > #calc:hover {
+		background: #f96b5b;
+	}
+}
