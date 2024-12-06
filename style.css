@@ -1,5 +1,23 @@
 @import url(https://fonts.googleapis.com/css?family=League+Spartan:100,200,300,regular,500,600,700,800,900);
 
+:root {
+	--bg: #3a4663;
+	--text-color: white;
+	--bg-color: #181f33;
+	--bg-box-button-color: #242d44;
+	--bg-button-color: #eae3dc;
+	--box-shadow-button-color: #b3a497;
+	--button-text-color: #434a59;
+	--reset-background-color: #647198;
+	--reset-box-shadow-color: #414e73;
+	--calc-bg-color: #d03f2f;
+	--calc-box-shadow: #93261a;
+	--del-bg-color: #647198;
+	--div-button-bg: #fffffe;
+	--div-button-reset-del-color: #a2b2e1;
+	--div-button-calc-color: #f96b5b;
+}
+
 * {
 	font-family: League Spartan;
 	padding: 0;
@@ -7,7 +25,7 @@
 }
 
 body {
-	background-color: #3a4663;
+	background-color: var(--bg);
 	padding: 15px;
 	height: 90vh;
 }
@@ -27,17 +45,22 @@ body {
 	justify-content: center;
 }
 
-.th1 {
-	color: white;
+.HeadCalc {
+	color: var(--text-color);
+}
+
+.HeadCalc > button {
+	height: 20px;
+	width: 20px;
 }
 
 .screen {
-	background-color: #181f33;
+	background-color: var(--bg-color);
 	padding: 20px;
 	border-radius: 15px;
 	width: 260px;
 	font-size: 2rem;
-	color: white;
+	color: var(--text-color);
 	font-weight: bolder;
 	display: flex;
 	flex-direction: row-reverse;
@@ -45,7 +68,7 @@ body {
 }
 
 .button {
-	background-color: #242d44;
+	background-color: var(--bg-box-button-color);
 	width: 260px;
 	padding: 15px;
 	border-radius: 15px;
@@ -58,14 +81,14 @@ body {
 }
 
 .button > div > button {
-	background-color: #eae3dc;
-	box-shadow: 0px -4px 0px 0px #b3a497 inset;
+	background-color: var(--bg-button-color);
+	box-shadow: 0px -4px 0px 0px var(--box-shadow-button-color) inset;
 	border: 0;
 	margin: 5px;
 	height: 50px;
 	width: 50px;
 	border-radius: 5px;
-	color: #434a59;
+	color: var(--button-text-color);
 	font-weight: bolder;
 	font-size: 2rem;
 }
@@ -75,25 +98,25 @@ body {
 }
 
 #reset {
-	background-color: #647198;
-	box-shadow: 0px -4px 0px 0px #414e73 inset;
-	color: white;
+	background-color: var(--reset-background-color);
+	box-shadow: 0px -4px 0px 0px var(--reset-box-shadow-color) inset;
+	color: var(--text-color);
 	width: 85%;
 	font-size: 1rem;
 }
 
 #calc {
-	background-color: #d03f2f;
-	box-shadow: 0px -4px 0px 0px #93261a inset;
-	color: white;
+	background-color: var(--calc-bg-color);
+	box-shadow: 0px -4px 0px 0px var(--calc-box-shadow) inset;
+	color: var(--text-color);
 	width: 85%;
 	font-size: 1rem;
 }
 
 #del {
-	background-color: #647198;
-	box-shadow: 0px -4px 0px 0px #414e73 inset;
-	color: white;
+	background-color: var(--del-bg-color);
+	box-shadow: 0px -4px 0px 0px var(--reset-box-shadow-color) inset;
+	color: var(--text-color);
 	font-size: 1rem;
 }
 
@@ -120,14 +143,14 @@ body {
 		font-size: 1.5rem;
 	}
 	.button > div > button:hover {
-		background: #fffffe;
+		background: var(--div-button-bg);
 	}
 	.button > div > #reset:hover,
 	#del:hover {
-		background: #a2b2e1;
+		background: var(--div-button-reset-del-color);
 	}
 
 	.button > div > #calc:hover {
-		background: #f96b5b;
+		background: var(--div-button-calc-color);
 	}
 }

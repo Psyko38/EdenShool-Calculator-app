@@ -104,3 +104,4 @@ function AddToMemory(text) {
 function PrintToTheScreen(text) {
 	screenElement.innerText = text;
 }
+
