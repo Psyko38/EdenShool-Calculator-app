@@ -29,6 +29,9 @@ buttonReset.addEventListener("click", () => {
 buttonDel.addEventListener("click", () => {
 	screenElement.innerHTML = screenElement.innerHTML.slice(0, -1);
 	PrintToTheScreen(screenElement.innerHTML);
+	if (screenElement.innerText == "" || screenElement.innerText == "0") {
+		screenElement.innerText = "0";
+	}
 });
 
 buttonResove.addEventListener("click", () => {
@@ -57,7 +60,9 @@ buttonPoint.addEventListener("click", () => {
 });
 
 bttonZero.addEventListener("click", () => {
-	AddToMemory(0);
+	if (screenElement.innerText > "0" || screenElement.innerText == "") {
+		AddToMemory(0);
+	}
 });
 
 buttonOne.addEventListener("click", () => {
@@ -96,7 +101,59 @@ buttonNing.addEventListener("click", () => {
 	AddToMemory(9);
 });
 
+addEventListener("keydown", (e) => {
+	if (goodkey.includes(e.key) == true) {
+		AddToMemory(e.key);
+	}
+
+	if (e.key == "Enter") {
+		e.preventDefault();
+		screenElement.innerHTML = eval(screenElement.innerHTML);
+		PrintToTheScreen(screenElement.innerHTML);
+	}
+
+	if (e.key == "Escape") {
+		e.preventDefault();
+		PrintToTheScreen("0");
+	}
+
+	if (e.key == "Backspace") {
+		e.preventDefault();
+		screenElement.innerHTML = screenElement.innerHTML.slice(0, -1);
+		PrintToTheScreen(screenElement.innerHTML);
+		if (screenElement.innerText == "" || screenElement.innerText == "0") {
+			screenElement.innerText = "0";
+		}
+	}
+});
+
+const goodkey = [
+	"0",
+	"1",
+	"2",
+	"3",
+	"4",
+	"5",
+	"6",
+	"7",
+	"8",
+	"9",
+	"/",
+	"*",
+	"-",
+	"+",
+	".",
+];
+
 function AddToMemory(text) {
+	if (
+		screenElement.innerText == 0 &&
+		text !== "." &&
+		screenElement.innerText == 0 &&
+		screenElement.innerText !== "0."
+	) {
+		screenElement.innerText = "";
+	}
 	screenElement.innerText = screenElement.innerHTML + text;
 	PrintToTheScreen(screenElement.innerHTML);
 }
@@ -104,4 +161,3 @@ function AddToMemory(text) {
 function PrintToTheScreen(text) {
 	screenElement.innerText = text;
 }
-
